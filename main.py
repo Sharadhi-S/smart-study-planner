@@ -1,3 +1,5 @@
+import json 
+
 def main_menu():
     print("==== Smart Study Planner ====")
     print("1. Add Task")
@@ -7,17 +9,30 @@ def main_menu():
     print("5. Save Tasks")
     print("6. Exit")
 
-    choice = input("Please enter your choice (1-6): ")
+    choice = input("Please enter your choice (1-6): ").strip()
     return choice
 
-tasks = []
+def save_tasks():
+    with open("tasks.json", "w") as file:
+        json.dump(tasks, file, indent=4)
+
+    print("Tasks saved successfully")
+
+def load_tasks():
+    try:
+        with open("tasks.json", "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
+tasks = load_tasks()
 
 while True:
     choice = main_menu()
     
     # Adding tasks
     if choice == '1':
-        task = input("Enter the task description: ").title()
+        task = input("Enter the task description: ").title().strip()
         if task=="":
             print("Task description cannot be empty.")
             continue
@@ -63,6 +78,9 @@ while True:
                     print("Invalid task number.")
 
     # Saving tasks to a file
+    elif choice == '5':
+        save_tasks()
+
 
     # Exiting the program            
     elif choice == '6':
