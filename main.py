@@ -1,4 +1,4 @@
-import json 
+from storage import save_tasks, load_tasks
 
 def main_menu():
     print("==== Smart Study Planner ====")
@@ -6,24 +6,10 @@ def main_menu():
     print("2. View Tasks")
     print("3. Complete Task")
     print("4. Delete Task")
-    print("5. Save Tasks")
-    print("6. Exit")
+    print("5. Exit")
 
-    choice = input("Please enter your choice (1-6): ").strip()
+    choice = input("Please enter your choice (1-5): ").strip()
     return choice
-
-def save_tasks():
-    with open("tasks.json", "w") as file:
-        json.dump(tasks, file, indent=4)
-
-    print("Tasks saved successfully")
-
-def load_tasks():
-    try:
-        with open("tasks.json", "r") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        return []
 
 tasks = load_tasks()
 
@@ -38,6 +24,7 @@ while True:
             continue
         else:
             tasks.append({"Name": task, "Status": "Pending"})
+            save_tasks(tasks)
             print(f"Task '{task}' added.")
     
     # Viewing tasks
@@ -57,6 +44,7 @@ while True:
             task_num = input("Enter the task number to mark as completed: ")
             if task_num.isdigit() and 1 <= int(task_num) <= len(tasks):
                 tasks[int(task_num) - 1]['Status'] = 'Completed'
+                save_tasks()
                 print(f"Task '{tasks[int(task_num) - 1]['Name']}' marked as completed.")
             else:
                 print("Invalid task number.")
@@ -73,17 +61,13 @@ while True:
             else:
                 if task_num.isdigit() and 1 <= int(task_num) <= len(tasks):
                     removed_task = tasks.pop(int(task_num) - 1)
+                    save_tasks()
                     print(f"Task '{removed_task['Name']}' deleted.")
                 else:
                     print("Invalid task number.")
 
-    # Saving tasks to a file
-    elif choice == '5':
-        save_tasks()
-
-
     # Exiting the program            
-    elif choice == '6':
+    elif choice == '5':
         print("Exiting the Smart Study Planner. Goodbye!")
         break
     else:

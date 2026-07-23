@@ -28,7 +28,7 @@ A simple command-line study planner built with Python to help organize and manag
 python main.py
 ```
 
-## 📖 Concepts Practiced
+## 📖 Skills Demonstrated 
 
 - Functions
 - Loops
