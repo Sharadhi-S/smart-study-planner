@@ -18,6 +18,19 @@ A simple command-line study planner built with Python to help organize and manag
 - JSON
 - Git & GitHub
 
+## 📂 Project Structure
+
+```
+Smart-Study-Planner/
+│
+├── main.py
+├── tasks.py
+├── storage.py
+├── tasks.json
+├── README.md
+└── .gitignore
+```
+
 ## 🚀 Getting Started
 
 1. Clone this repository.
@@ -28,13 +41,14 @@ A simple command-line study planner built with Python to help organize and manag
 python main.py
 ```
 
-## 📖 Skills Demonstrated 
+## 📖 Skills Demonstrated
 
 - Functions
 - Loops
 - Lists and dictionaries
 - File handling with JSON
 - Exception handling
+- Modular project organization
 - Git and GitHub
 - Problem decomposition
 
@@ -44,5 +58,4 @@ python main.py
 - Add task priorities
 - Search for tasks
 - Organize tasks into categories
-- Refactor the project into multiple Python files
 - Build a graphical user interface (GUI)

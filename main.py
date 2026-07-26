@@ -37,6 +37,7 @@ while True:
     elif choice == '5':
         print("Exiting the Smart Study Planner. Goodbye!")
         break
+
     else:
         print("Invalid choice. Please try again.")
         continue
