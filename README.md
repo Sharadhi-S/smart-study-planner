@@ -12,7 +12,7 @@ A simple command-line study planner built with Python to help organize and manag
 - 🔄 Automatically load saved tasks when the program starts
 - ✔️ Basic input validation
 
-## ## 📷 Demo
+## 📷 Demo
 
 ![Smart Study Planner](images/demo.png)
 
