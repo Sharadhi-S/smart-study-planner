@@ -12,6 +12,10 @@ A simple command-line study planner built with Python to help organize and manag
 - 🔄 Automatically load saved tasks when the program starts
 - ✔️ Basic input validation
 
+## ## 📷 Demo
+
+![Smart Study Planner](images/demo.png)
+
 ## 🛠️ Technologies Used
 
 - Python 3
@@ -56,6 +60,6 @@ python main.py
 
 - Add due dates
 - Add task priorities
-- Search for tasks
 - Organize tasks into categories
+- Search for tasks
 - Build a graphical user interface (GUI)
